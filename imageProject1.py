@@ -38,7 +38,6 @@ image9 = Image.open(folder +"9.png")
 pic9 = image9.load()
 pixels.append(pic9)
 
-# pixelsFinal = makeEmptyPicture(width , height)
 pixelsFinal = Image.new(image1.mode , image1.size)
 finalData = pixelsFinal.load()
 width = 495
@@ -58,12 +57,8 @@ for x in range(0 , width):
         bluelist = []
         for picCount in range(0 , 8):
             pix = pixels[picCount][x,y]
-            # pixels[picCount][x , y] = colors[medianOdd(pix)]
             redlist.append(pix[0])
             greenlist.append(pix[1])
             bluelist.append(pix[2])
         finalData[x,y] = (medianOdd(redlist),medianOdd(greenlist),medianOdd(bluelist))
-        # finalData[x,y][] = medianOdd(greenlist)
-        # finalData[x,y][] = medianOdd(bluelist)
-
 pixelsFinal.show()
